@@ -14,7 +14,7 @@ contract AirdropTest is BaseTest {
   }
 
 function test_claimWithSismo() public {
-    _registerTreeRoot(13742996672213950612045363977698064109673524131987349704461232818461464424778);
+    _registerTreeRoot(6809039494302059845304658373818291425421659513112036389099201151919308922689);
 
     // Replace with actual response data from your app
     bytes

@@ -66,6 +66,9 @@ forge test --fork-url https://rpc.ankr.com/eth_goerli
 ## Run fork tests with mumbai
 forge test --fork-url https://rpc.ankr.com/polygon_mumbai
 
+## Run fork tests with optimism
+forge test --fork-url https://rpc.ankr.com/optimism
+
 # you can aslo use the rpc url you want by passing an environment variable
 forge test --fork-url $RPC_URL
 ```

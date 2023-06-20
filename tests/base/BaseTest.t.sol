@@ -15,7 +15,7 @@ interface IAvailableRootsRegistry {
 
 contract BaseTest is Test {
   IAddressesProvider sismoAddressesProvider =
-    IAddressesProvider(0x3340Ac0CaFB3ae34dDD53dba0d7344C1Cf3EFE05);
+    IAddressesProvider(0x3Cd5334eB64ebBd4003b72022CC25465f1BFcEe6);
   IAvailableRootsRegistry availableRootsRegistry;
 
   function _registerTreeRoot(uint256 root) internal {
