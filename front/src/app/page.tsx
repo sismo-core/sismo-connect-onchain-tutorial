@@ -48,9 +48,7 @@ const sismoConnectConfig: SismoConnectConfig = {
     // For development purposes
     // insert any account that you want to impersonate  here
     // Never use this in production
-    impersonate: [
-      "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045", // vitalik.eth
-    ],
+    impersonate: ["dhadrien.sismo.eth", "twitter:dhadrien_", "github:dhadrien"],
   },
 };
 
@@ -71,7 +69,7 @@ export default function Home() {
   const { isConnected, address } = useAccount({
     onConnect: async ({ address }) => address && (await fundMyAccountOnLocalFork(address)),
   });
-  const { switchNetworkAsync } = useSwitchNetwork();
+  const { switchNetworkAsync, switchNetwork } = useSwitchNetwork();
 
   /* *************  Wagmi hooks for contract interaction ******************* */
   const contractCallInputs =
@@ -218,7 +216,14 @@ export default function Home() {
             </p>
           </>
         )}
-        {isConnected && !amountClaimed && error && <p className={styles.error}>{error}</p>}
+        {isConnected && !amountClaimed && error && (
+          <>
+            <p className={styles.error}>{error}</p>
+            {error.slice(0, 16) === "Please switch to" && (
+              <button onClick={() => switchNetwork?.(CHAIN.id)}>Switch chain</button>
+            )}
+          </>
+        )}
       </main>
 
       {isConnected && (
