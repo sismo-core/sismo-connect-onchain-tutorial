@@ -15,7 +15,6 @@ This repository aims at providing a simple starting codebase to follow the [Sism
 ```bash
 git clone https://github.com/sismo-core/sismo-connect-onchain-tutorial
 cd sismo-connect-onchain-tutorial
-yarn
 ```
 
 ### Install contract dependencies
