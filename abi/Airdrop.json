@@ -402,20 +402,27 @@
     "name": "config",
     "outputs": [
       {
-        "internalType": "bytes16",
-        "name": "appId",
-        "type": "bytes16"
-      },
-      {
         "components": [
           {
-            "internalType": "bool",
-            "name": "isImpersonationMode",
-            "type": "bool"
+            "internalType": "bytes16",
+            "name": "appId",
+            "type": "bytes16"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bool",
+                "name": "isImpersonationMode",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct VaultConfig",
+            "name": "vault",
+            "type": "tuple"
           }
         ],
-        "internalType": "struct VaultConfig",
-        "name": "vault",
+        "internalType": "struct SismoConnectConfig",
+        "name": "",
         "type": "tuple"
       }
     ],
