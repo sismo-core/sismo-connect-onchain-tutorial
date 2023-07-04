@@ -17,17 +17,17 @@ contract Airdrop is ERC20, SismoConnect {
   using SismoConnectHelper for SismoConnectVerifiedResult;
   mapping(uint256 => bool) public claimed;
 
-  // add your appId as a constant
-  bytes16 public constant APP_ID = 0xf4977993e52606cfd67b7a1cde717069;
+  // add your appId
+  bytes16 private _appId = 0xf4977993e52606cfd67b7a1cde717069;
   // use impersonated mode for testing
-  bool public constant IS_IMPERSONATION_MODE = true;
+  bool private _isImpersonationMode = true;
 
   constructor(
     string memory name,
     string memory symbol
   )
     ERC20(name, symbol)
-    SismoConnect(buildConfig(APP_ID, IS_IMPERSONATION_MODE)) // <--- Sismo Connect constructor
+    SismoConnect(buildConfig(_appId, _isImpersonationMode)) // <--- Sismo Connect constructor
   {}
 
   function claimWithSismo(bytes memory response) public {
