@@ -3,7 +3,7 @@ pragma solidity ^0.8.17;
 
 import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "forge-std/console.sol";
-import "sismo-connect-solidity/SismoLib.sol"; // <--- add a Sismo Connect import
+import "sismo-connect-solidity/SismoConnectLib.sol"; // <--- add a Sismo Connect import
 
 /*
  * @title Airdrop
@@ -34,16 +34,16 @@ contract Airdrop is ERC20, SismoConnect {
     SismoConnectVerifiedResult memory result = verify({
       responseBytes: response,
       // we want the user to prove that he owns a Sismo Vault
-      // we are recreating the auth request made in the frontend to be sure that 
+      // we are recreating the auth request made in the frontend to be sure that
       // the proofs provided in the response are valid with respect to this auth request
       auth: buildAuth({authType: AuthType.VAULT}),
       // we also want to check if the signed message provided in the response is the signature of the user's address
-      signature:  buildSignature({message: abi.encode(msg.sender)})
+      signature: buildSignature({message: abi.encode(msg.sender)})
     });
 
     // if the proofs and signed message are valid, we take the userId from the verified result
-    // in this case the userId is the vaultId (since we used AuthType.VAULT in the auth request), 
-    // it is the anonymous identifier of a user's vault for a specific app 
+    // in this case the userId is the vaultId (since we used AuthType.VAULT in the auth request),
+    // it is the anonymous identifier of a user's vault for a specific app
     // --> vaultId = hash(userVaultSecret, appId)
     uint256 vaultId = result.getUserId(AuthType.VAULT);
 
