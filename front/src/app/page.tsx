@@ -48,7 +48,15 @@ const sismoConnectConfig: SismoConnectConfig = {
     // For development purposes
     // insert any account that you want to impersonate  here
     // Never use this in production
-    impersonate: ["leo21.sismo.eth", "twitter:leo21_eth", "github:leo21"],
+    impersonate: [
+      "leo21.sismo.eth",
+      "0xA4C94A6091545e40fc9c3E0982AEc8942E282F38",
+      "0x1b9424ed517f7700e7368e34a9743295a225d889",
+      "0x82fbed074f62386ed43bb816f748e8817bf46ff7",
+      "0xc281bd4db5bf94f02a8525dca954db3895685700",
+      "twitter:leo21_eth",
+      "github:leo21",
+    ],
   },
 };
 
