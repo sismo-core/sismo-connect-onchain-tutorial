@@ -31,7 +31,7 @@ forge install
 ```bash
 # in another terminal
 # starts a local fork of Mumbai
-yarn anvil
+yarn chain
 ```
 
 ### Launch the local application
