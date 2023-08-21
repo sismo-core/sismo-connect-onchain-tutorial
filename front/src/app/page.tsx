@@ -23,7 +23,9 @@ import {
   gnosis,
   polygon,
   polygonMumbai,
-} from "viem/chains";
+  base,
+  baseGoerli,
+} from "wagmi/chains";
 import { waitForTransaction } from "@wagmi/core";
 import { decodeEventLog, formatEther } from "viem";
 import { abi as AirdropABI } from "../../../abi/Airdrop.json";
